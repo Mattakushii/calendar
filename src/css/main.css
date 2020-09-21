@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.arrow_btn {
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px 13px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.arrow_btn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+.app_container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.app_side_bar {
+    flex: 2;
+    height: 100%;
+    background-color: #EC4849;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.side_bar_date_picker {
+    background-color: #E44236;
+    width: 100%;
+    flex: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+}
+
+.side_bar_current_date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.side_bar_selected_date {
+    text-align: center;
+    font-size: 84px;
+    font-weight: bold;
+}
+
+.side_bar_selected_mounth {
+    text-align: center;
+    font-size: 32px;
+}
+
+.side_bar_current_events {
+    flex: 6;
+    width: 100%;
+    color:#fff;
+}
+
+.side_bar_event_addor {
+    flex: 1;
+    align-self: center;
+    width: 100%;
+    background-color: #E44236;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app_calendar {
+    flex: 6;
+}
+
+.calendar_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar_week_days {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendar_days {
+    border: 1px solid #000;
+    font-weight: bold;
+    background-color: lightgray;
+}
+
+.calendar_month_days {
+    display: flex;
+
+}
+
+.calendar_month_week {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendar_month_day {
+    margin: 2px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.calendar_month_day:hover {
+    background-color: antiquewhite;
+    transition: 0.4s;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/css/main.css">
+    <script src="https://kit.fontawesome.com/f6266ff04c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="app_container">
+        <div class="app_side_bar">
+            <div class="side_bar_date_picker">
+                <i id="arrow_left" class="arrow_btn fas fa-chevron-left"></i>
+                <div class="side_bar_current_date">
+                    <div id="current_date" class="side_bar_selected_date">--</div>
+                    <div id="current_month" class="side_bar_selected_mounth">January</div>
+                </div>
+                <i id="arrow_right" class="arrow_btn fas fa-chevron-right"></i>
+            </div>
+            <div class="side_bar_current_events">
+                <h3 class="current_events_header">События в этот день</h3>
+                <ul class="events_list">
+                    <li class="events_list_item">покушоть</li>
+                    <li class="events_list_item">пописить</li>
+                    <li class="events_list_item">покакоть</li>
+                </ul>
+            </div>
+            <div class="side_bar_event_addor">
+                <input type="text" class="event_addor_field">
+                <button class="event_addor_submit">Добавить</button>
+            </div>
+        </div>
+        <div class="app_calendar">
+            <div id="calendar"></div>
+            <input type="text" placeholder="Год" id="year">
+            <input type="text" placeholder="Месяц" id="month">
+            <button id="test">нажми</button>
+
+            <div class="calendar_container">
+                <div class="calendar_week_days">
+                    <div id="prek" class="calendar_days">Пн</div>
+                    <div class="calendar_days">Вт</div>
+                    <div class="calendar_days">Ср</div>
+                    <div class="calendar_days">Чт</div>
+                    <div class="calendar_days">Пт</div>
+                    <div class="calendar_days">Сб</div>
+                    <div class="calendar_days">Вс</div>
+                </div>
+
+                <div class="calendar_month_week">
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                </div>
+                <div class="calendar_month_week">
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                </div>
+                <div class="calendar_month_week">
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                </div>
+                <div class="calendar_month_week">
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                </div>
+                <div class="calendar_month_week">
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                </div>
+                <div class="calendar_month_week">
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                    <div class="calendar_month_day"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="dist/bundle.js"></script>
+</body>
+</html>
