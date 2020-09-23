@@ -3,7 +3,7 @@ import Day from "./Day";
 export default class Calendar {
     constructor() {
         this.baseDate = new Date();
-        this.calendarPosition = document.getElementsByClassName('calendar_month_day');
+        this.cells = document.getElementsByClassName('calendar_month_day');
         this.days;
 
         this.init();
@@ -13,25 +13,23 @@ export default class Calendar {
         let year = options.year || this.baseDate.getFullYear();
         let month = options.month || this.baseDate.getMonth() + 1;
         let trueMonth = month - 1;
-        this.calendarData = [];
+        let daysList = [];
         this.days = [];
         
 
         let date = new Date(year, trueMonth, 1);
         
         for (let i = 0; i < this.getDay(date); i++) {
-            this.calendarData.push('');
+            daysList.push('');
         }
 
         while (date.getMonth() == trueMonth) {
-            let day = new Day({monthDay: date.getDate()});
-            this.days.push(day);
-            this.calendarData.push(day.getMonthDay());
+            daysList.push(date.getDate());
             date.setDate(date.getDate() + 1);
         }
 
-        for(let i = 0; i < this.calendarData.length; i++) {
-            this.calendarPosition[i].innerHTML = this.calendarData[i];
+        for(let i = 0; i <  daysList.length; i++) {
+            this.days.push(new Day({markup: this.cells[i], monthDay:daysList[i]}))
         }
     }
 
@@ -42,7 +40,7 @@ export default class Calendar {
     }
 
     init() {
-        this.calendarPosition.innerHTML = '';
-        this.fillCells({});
+        this.cells.innerHTML = '';
+        this.fillCells({year: 2020, month: 10});
     }
 }
