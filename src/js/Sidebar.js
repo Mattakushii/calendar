@@ -1,12 +1,7 @@
 export default class Sidebar{
-    constructor() {
-        this.nextMonthBtn = document.getElementById('arrow_right');
-        this.prevMonthBtn = document.getElementById('arrow_left');
-        this.currentDate = document.getElementById('current_date');
-        this.currentMonth = document.getElementById('current_month');
-
-
-        this.date = new Date();
+    constructor(options) {
+        this.date = options.date || new Date();
+        this.events = options.events || [];
         this.months = {
             0: 'January',
             1: 'February',
@@ -20,33 +15,39 @@ export default class Sidebar{
             9: 'October',
             10: 'November',
             11: 'December'
-        };
-
-        this.callbacks = {
-            ////callbacks
         }
 
-        this.nextMonthBtn.onclick = ()=> {
-            // super.check()
-        }
+
+        //markup elements
+        this.currentMonth = document.getElementById('current_month');
+        this.currentDate  = document.getElementById('current_date');
 
         this.init();
     }
 
-    nextMonth() {
+    getAllData() {
+        return  {
+            date: this.date,
+            events: this.events
+        };
+    }
 
+    nextMonth() {
+        this.date.setMonth(this.date.getMonth() + 1, 1);
+        this.pasteData();
     }
 
     prevMonth() {
-
+        this.date.setMonth(this.date.getMonth() - 1, 1);
+        this.pasteData();
     }
 
-    fillDate() {
-        this.currentDate.innerHTML = this.date.getDate();
-        this.currentMonth.innerHTML = this.months[this.date.getMonth()];
+    pasteData() {
+        this.currentMonth.textContent = this.months[this.date.getMonth()];
+        this.currentDate.textContent  = this.date.getDate();
     }
 
     init() {
-        this.fillDate();
+        this.pasteData();
     }
 }

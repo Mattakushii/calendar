@@ -1,5 +1,21 @@
 export default class Month {
     constructor(options) {
-        this.monthDays = (options.days instanceof Object) ? options.days : function() {}
+        this.year = options.year;
+        this.daysArr = options.days;
+        this.month = options.month;
     }
+
+    getMonth() {
+
+    }
+
+    setMonth() {
+
+    }
+
+    getDays() {
+
+    }
+
+    
 }

@@ -1,35 +1,36 @@
-import Day from "./Day";
-
-export default class Calendar {
+export default class CalendarGenerator {
     constructor() {
         this.baseDate = new Date();
-        this.cells = document.getElementsByClassName('calendar_month_day');
-        this.days;
+        this.generatedData;
 
         this.init();
     }
 
-    fillCells(options) {
-        let year = options.year || this.baseDate.getFullYear();
-        let month = options.month || this.baseDate.getMonth() + 1;
-        let trueMonth = month - 1;
-        let daysList = [];
-        this.days = [];
-        
+    getGeneratedData() {
+        return this.generatedData;
+    }
 
-        let date = new Date(year, trueMonth, 1);
-        
-        for (let i = 0; i < this.getDay(date); i++) {
-            daysList.push('');
+    generateCellsData(data) {
+        let year, month;
+        this.generatedData = [];
+
+        if(data) {
+            year = data.getFullYear();
+            month = data.getMonth();
+        } else {
+            year = this.baseDate.getFullYear();
+            month = this.baseDate.getMonth();
         }
 
-        while (date.getMonth() == trueMonth) {
-            daysList.push(date.getDate());
-            date.setDate(date.getDate() + 1);
+        let fullMonth = new Date(year, month, 1);
+        
+        for (let i = 0; i < this.getDay(fullMonth); i++) {
+            this.generatedData.push('');
         }
 
-        for(let i = 0; i <  daysList.length; i++) {
-            this.days.push(new Day({markup: this.cells[i], monthDay:daysList[i]}))
+        while (fullMonth.getMonth() == month) {
+            this.generatedData.push(fullMonth.getDate());
+            fullMonth.setDate(fullMonth.getDate() + 1);
         }
     }
 
@@ -40,7 +41,6 @@ export default class Calendar {
     }
 
     init() {
-        this.cells.innerHTML = '';
-        this.fillCells({year: 2020, month: 10});
+        this.generateCellsData()
     }
 }
