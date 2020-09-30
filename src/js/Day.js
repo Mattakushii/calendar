@@ -1,19 +1,21 @@
 export default class Day {
     constructor(options) {
+        this.mounthDay = options.mounthDay;
         this.markup = options.markup;
-        
-        this.monthDay = options.monthDay;
-        this.markup.textContent = this.monthDay;
-        
-        this.markup.onclick = function() {
-            console.log(this.textContent);
-        }
 
-        this.events = {
-            // 
-        }
-        //колличество событий
+        this.init()
     }
 
-    
+    getMarkup() {
+        return this.markup
+    }
+
+    getMounthDay() {
+        return this.mounthDay
+    }
+
+    init() {
+        this.markup.textContent = '';
+        this.markup.textContent = this.mounthDay;
+    }
 }

@@ -32,6 +32,7 @@ export default class CalendarGenerator {
             this.generatedData.push(fullMonth.getDate());
             fullMonth.setDate(fullMonth.getDate() + 1);
         }
+        // console.log(this.generatedData)
     }
 
     getDay(date) {

@@ -17,7 +17,6 @@ export default class Sidebar{
             11: 'December'
         }
 
-
         //markup elements
         this.currentMonth = document.getElementById('current_month');
         this.currentDate  = document.getElementById('current_date');
@@ -41,6 +40,12 @@ export default class Sidebar{
         this.date.setMonth(this.date.getMonth() - 1, 1);
         this.pasteData();
     }
+
+    changeDate(date) {
+        this.currentDate.textContent = date;
+    }
+
+    //changeDate
 
     pasteData() {
         this.currentMonth.textContent = this.months[this.date.getMonth()];
